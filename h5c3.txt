@@ -1,0 +1,309 @@
+·   h5第一天
+   DOCTYPE 告诉浏览器使用的是什么标准
+   header 头部
+     nav  导航栏
+   main主体
+     article 文本
+     aside 侧边栏
+   footer 页脚
+    section 相当于div 无语义
+
+ cc:ie6 兼容处理  [if lt IE 9] /* 低版本的ie 中如果 想要看到 必须添加display block */
+    
+   form 属性规定输入域所属的一个或多个表单。  form 属性必须引用所属表单的 id;
+
+fieldset 元素可将表单内的相关元素分组。
+   <fieldset> 标签将表单内容的一部分打包，生成一组相关表单的字段。
+
+    label 将表单控件作为标记标签的内容，这样的就是隐式形式，或者为 <label> 标签下的 for 属性命名一个目标表单 id，这样就是显式形式。
+
+显式的联系：
+<label for="SSN">Social Security Number:</label>
+<input type="text" name="SocSecNum" id="SSn" />
+
+隐式的联系：
+<label>Date of Birth: <input type="text" name="DofB" /></label>
+
+   <legend> 标签为 <fieldset>、<figure> 以及 <details> 元素定义标题.
+
+表单属性：
+   placeholder 属性提供一种提示（hint），描述输入域所期待的值。与value相同但不占位置
+
+   datalist 元素规定输入域的选项列表。
+    列表是通过 datalist 内的 option 元素创建的。
+如需把 datalist 绑定到输入域，请用输入域的 list 属性引用 datalist 的 id：list 属性规定输入域的 datalist。datalist 是输入域的选项列表。
+<input type="text" list = 'foodList'>
+<datalist id='foodList'>
+
+   option 元素永远都要设置 value 属性。
+   input 元素是空的，仅包含属性。输入框。
+   required 非空验证（不能为空）。
+
+   multiple 属性可同时选择多个选项。可以把 multiple 属性与 size 属性配合使用，来定义可见选项的数目。<select multiple="multiple" size="2"> file上传文件
+meter  标签定义度量衡。仅用于已知最大和最小值的度量。用函数调用value值
+
+oninput  当元素获得用户输入时运行脚本
+   autocomplete 属性规定 form 或 input 域应该拥有自动补全功能。
+   
+    Submit 对象代表 HTML 表单中的一个提交按钮type属性
+
+    audio 元素能够播放声音文件或者音频流。
+    video 标签定义视频，比如电影片段或其他视频流。
+    source 签为媒介元素（比如 <video> 和 <audio>）定义媒介资源。
+    control 属性供添加播放、暂停和音量控件。
+    autoplay 自动播放
+    loop 是否循环
+    src 直接指定音频文件
+    我们在使用 width height 设置video标签的 宽高时, 会优先考虑视频本身的大小 改变的是 video标签的大小 只设宽或高
+
+    poster 视频没有播放的时候 显示的图片
+
+    embed 标签定义嵌入的内容，比如插件，标签必须有 src 属性。   <embed src="movie/[报告老板][第二季]第11集_bd.mp4" >
+    document.querySelectorAll('类名');这个方法 返回的类型是 数组 哪怕只有一个元素 返回的也是伪数组
+
+    .classList.add() 增加类
+
+    .classList.remove() 移除类
+
+    .classList.contains()  判断是否存在class
+
+    .classList.toggle() 切换class
+
+  html5为了规范自定义属性的写法,新增了一个 data- 的属性（自定义）
+<div data-age='18' data-skill='eatFood' data-habbit = 'tableTannis' data-food-vegetable='西兰花' data-foodMeat='牛肉'></div>
+所有 通过 data-的方式 添加的属性 都会保存在dom元素的 dataset属性中 他是一个对象，用dataset.属性可以得到属性值；注意大小写
+设置属性时 能够使用大写字母 但是会自动帮我们转化为 小写的字母
+作用是 为了规范 自定义属性的写法
+
+第二天
+transition：all 1s;过渡、转换之意
+获取到 拥有 该属性的元素：  标签[属性]
+获取 属性等于某个值的 元素 属性值 可以使用 引号进行包裹： 标签[属性=“属性值”]
+使用空格分隔的 多个属性 其中有某个属性即可获取： 标签[属性~=“属性值”]
+获取以某个属性开头的语法：  标签[属性^=“属性值”]
+取以某个值 结尾的属性 ：  标签[属性$=“属性值”]
+获取 属性中 拥有某个值的 元素 ： 标签[属性*=“属性值”]
+如果属性的值 只有very 也能够获取  用来获取 多个属性 并且 使用-连接：  标签[属性 |=“属性值”]
+
+
+
+伪类 单冒号
+a:link {color: #FF0000}	/* 未访问的链接 */
+a:visited {color: #00FF00}	/* 已访问的链接 */
+a:hover {color: #FF00FF}	/* 鼠标移动到链接上 */
+a:active {color: #0000FF}	/* 选定的链接 */
+   :first-child
+   :last-child
+   :first-of-type
+   :nth-type(从一开始)
+   :nth-of-type(n 从零开始)
+
+伪元素选择器 两个冒号 必须是双标签
+  标签::first-leter 首字母
+  标签::first-line  首行
+  标签::selection 设置被选中文本的(颜色 背景色 字体颜色)
+   ::after   无语义
+   ::before  
+
+颜色设置
+hsl 色相 饱和度 明度
+hsla 透明度不会被继承
+单词 16进制  rgb(0,0,0)  rgba(0,0,0,.5)  hsl(0,0%,0%)  	hsla(0,0%,0%,.5)
+
+文字阴影 text-shadow:2xp 2px 10px orange，-2xp -2px 10px orange;(x y 模糊度 颜色)	
+连续设置多个有逗号隔开，
+
+盒子阴影 
+box-shadow:inset（向内） 1px 1px 1px 3px orange;(方向 x y 模糊度 缩放 颜色) 
+
+盒模型
+box-sizing：border-box；让 盒子 优先保证自己所占区域的大小,对内容进行压缩;
+box-sizing: content-box;先保证内容的大小 对盒子进行缩放;
+
+背景图片大小
+background-size：100px 100px,100px 100px;精确设置
+background-size:contain;等比比例拉伸 一边顶格停止
+background-size:cover;等比比例拉伸 两边顶格有可能超出
+background-size：100% 100%
+background-position:left top,100px 100px;(默认显示左上角，设置多次用逗号隔开)
+background：url（）no-repeat 100px 100px/10px 10px;(/前面是位置，/后面是大小)
+
+background-origin:padding-box;从内容开始
+background-origin:conent-box;从边框开始
+
+background-clip:border-box;剪切边框之外的内容
+background-clip:padding-box;剪切padding之外的内容
+background-clip:content-box;剪切content之外的内容
+5
+线性渐变
+background-image:linear-gradient(to left,color 10%,color 20%,color,color) (最终方向 颜色)
+
+径向渐变（圆形的渐变）
+background:radial-gradient(100px at center（50% 50%）,color ,color)（半径大小，圆心坐标 x y，渐变范围，颜色，颜色）
+
+
+transition-property:width,height;指定类型
+transition-duration:1s;持续时间
+transition-delay:1s;延迟时间
+transition-timing-function:ease;线性
+过度动画类型：linear ease-in ease-out ease(默认)
+
+变换：
+2D变换基础语法
+transform:tanslate(10px,10px) (x,y)向左向下
+transform:translateX(10px);左移
+transform:translateY(10px);下移
+
+transform:scale(.5,1.5) 缩放 小于1缩进，大于1放大
+transform:scaleX(.5)
+transform:scaleY(.5)
+ 
+transform:rotate(180deg)  旋转  deg角度
+transform-origin:top left;旋转定位
+transform-origin:50% 100%;旋转定位
+
+transform:skew(1deg,1deg)  扭曲
+ 3D变换
+transform-style: preserve-3d;
+perspective: 500px;近大远小
+backface-visibility: hidden;反面看不到
+
+动画的使用必须要准备
+1.准备动画 @keyframes 关键字定义
+2.需要为想要使用动画的dom元素 添加一系列的动画属性
+@keyframes 动画名{
+	from{
+	from中如果不设置 默认使用的是 初始状态 
+	  }
+	to{
+	transform: translateX(800px);
+	  }
+	}
+
+.类名{
+	/* 动画的名字 */
+	animation-name:动画名;
+	/* 动画持续多久 */
+	animation-duration: 2s;
+	 /* 设置动画的次数
+            动画次数
+            可以给具体的值
+            infinite 无限
+            */
+	 animation-iteration-count: infinite;无限
+	/* 动画的速度 线型 */
+	animation-timing-function: linear;
+	/* 动画的延迟事件 */
+	animation-delay: 2s;
+	}
+
+
+/* 动画属性的复合写法 */
+.类名{
+	/* 复合写法 
+	属性的顺序 是可以随意调换的
+	第一次出现的时间 是持续时间
+	第二次出现的时间 是延迟时间
+	如果只写了一个时间 默认就是 持续时间
+	*/
+	/* animation: 动画名 1s 2s linear infinite ; */
+	/*animation: linear  infinite 1s 2s   动画名; */
+	animation: linear 1s 2s   动画名;
+	}
+/* 精确设置动画的过程 */
+@keyframes 动画名{
+	/* 起始状态 */
+	0%{
+	}
+	/* 动画的一半 移动到屏幕的 最右边 */
+	50%{
+		transform: translateX(1000px);
+	}
+	/* 返回到起始的位置 */
+	100%{
+		transform: translateX(0);
+	}
+	}
+
+设置文字或图标 先生成字体下载，改文件名解压，注意引用地址
+
+弹性布局
+/* 1. 使用弹性布局 需要在 父盒子中 开启 弹性布局
+弹性布局 开启以后 元素默认分为 两个轴排布
+	主轴 默认是x方向
+	副轴 默认是 y方向
+display: flex; 开启弹性布局
+*/，
+
+/*  调整元素 在主轴上的 排布方式
+	flex-end 到主轴的末尾
+  	center 居中
+	flex-start 默认值左
+	space-between 左右靠边,中间间隙 相等排布
+	space-around 左右 间隙相等
+ justify-content: space-around;
+*/
+
+/* 设置副轴的 对其方式 
+	如果 只有一行 设置 元素 在副轴上的对其方式
+	flex-start  头部
+	flex-end   尾部
+	center   中间
+	 */
+align-items: flex-end; 副轴尾部
+
+/!* 单独设置元素，在副轴上的对其方式，会覆盖父元素的 align-items *!/
+align-self: center;   副轴中间			
+
+/*  调整主轴方向 变为 垂直
+	主轴 变为是y方向
+	副轴 变为是 x方向
+	主轴排布方式不变
+	column 纵队 垂直
+	row 水平
+flex-direction: column; 垂直
+ */
+			
+弹性布局换行
+flex-wrap:wrap;  换行
+/* 变为多行了 无法使用 align-items 进行位置设置 
+	align-content 在多行的时候 设置属性 跟 justify-content 一模一样
+	如果只有 一行时 无法生效
+*/
+
+
+第五天
+1.插件的使用 fullpage  //github
+
+
+百度地图获取位置信息
+window.navigator.geolocation.getCurrentPosition(function(position){
+	经度:position.coords.longitude;
+	纬度:position.coords.latitude; 
+})
+
+
+onplay 触发事件（视频一直播放事件一直触发）
+
+currentTime 视频已播放长度
+duration  视频总长度
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+·
